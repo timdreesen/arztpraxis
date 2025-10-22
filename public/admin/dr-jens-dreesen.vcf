@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Dreesen;Jens;;Dr.;
+FN:Dr. med. Jens Dreesen
+ORG:Praxis Dr. med. Jens Dreesen
+TEL;TYPE=work,voice:+4945034444
+ADR;TYPE=work:;;Strandallee 97;Timmendorfer Strand;;23669;Germany
+URL:https://dreesen.info
+END:VCARD
