@@ -31,7 +31,7 @@ public_folder: /uploads
 collections:
   - name: outofoffice
     label: Out of Office Notices
-    folder: content/outofoffice
+    folder: public/content/ooo
     extension: json
     format: json
     create: true

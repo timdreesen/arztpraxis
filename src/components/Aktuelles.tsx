@@ -4,7 +4,7 @@ import path from "path";
 import dayjs from "dayjs";
 
 export default function Aktuelles() {
-  const dir = path.join(process.cwd(), "public/data/outofoffice");
+  const dir = path.join(process.cwd(), "public/content/ooo");
 
   type OutOfOfficeNotice = {
     start_date: string;
