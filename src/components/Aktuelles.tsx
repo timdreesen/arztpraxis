@@ -6,6 +6,14 @@ import dayjs from "dayjs";
 export default function Aktuelles() {
   const dir = path.join(process.cwd(), "public/data/outofoffice");
 
+  type OutOfOfficeNotice = {
+    start_date: string;
+    end_date: string;
+    message: string;
+    published: boolean;
+    available_doctors?: { doctor: string }[];
+  };
+
   let notices = [];
   try {
     const files = fs.readdirSync(dir);
@@ -21,7 +29,7 @@ export default function Aktuelles() {
   const now = dayjs();
   const preNoticeDays = 3;
 
-  const activeNotice = notices
+  const activeNotice: OutOfOfficeNotice | undefined = notices
     .filter((n) => {
       if (!n.published) return false;
       const start = dayjs(n.start_date);
@@ -35,16 +43,15 @@ export default function Aktuelles() {
 
   if (!activeNotice) return null;
 
+  const doctors = activeNotice.available_doctors ?? [];
+
   return (
     <div className="bg-primary/10 border-l-4 border-primary text-primary-dark p-4 rounded-md shadow-sm my-4">
       <h2 className="font-bold">Praxis geschlossen</h2>
       <p>{activeNotice.message}</p>
-      {activeNotice.available_doctors?.length > 0 && (
+      {doctors.length > 0 && (
         <p className="text-sm mt-1">
-          Vertretung:{" "}
-          {activeNotice.available_doctors
-            .map((d: { doctor: any }) => d.doctor)
-            .join(", ")}
+          Vertretung: {doctors.map((d) => d.doctor).join(", ")}
         </p>
       )}
     </div>
