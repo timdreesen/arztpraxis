@@ -5,13 +5,17 @@ import dayjs from "dayjs";
 
 export default function Aktuelles() {
   const dir = path.join(process.cwd(), "public/content/ooo");
-
+  type Doctor = {
+    name: string;
+    phone: string;
+    address: string;
+  };
   type OutOfOfficeNotice = {
     start_date: string;
     end_date: string;
     message: string;
     published: boolean;
-    available_doctors?: { doctor: string }[];
+    available_doctors?: Doctor[];
   };
 
   let notices = [];
@@ -44,16 +48,33 @@ export default function Aktuelles() {
   if (!activeNotice) return null;
 
   const doctors = activeNotice.available_doctors ?? [];
+  const vertreter = doctors?.map((doc) => {
+    return (
+      <div key={doc.name}>
+        <p>{doc.name}</p>
+        <p>{doc.phone}</p>
+        <p>{doc.address}</p>
+      </div>
+    );
+  });
 
   return (
-    <div className="bg-primary/10 border-l-4 border-primary text-primary-dark p-4 rounded-md shadow-sm my-4">
-      <h2 className="font-bold">Praxis geschlossen</h2>
-      <p>{activeNotice.message}</p>
-      {doctors.length > 0 && (
-        <p className="text-sm mt-1">
-          Vertretung: {doctors.map((d) => d.doctor).join(", ")}
-        </p>
-      )}
+    <div className="text-neutral-800">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-5 sm:flex-row sm:items-start">
+        <div className="p-4 sm:max-w-1/2">
+          <p className="font-bold text-2xl">
+            Die Praxis ist vom {activeNotice.start_date} bis zum{" "}
+            {activeNotice.end_date} geschlossen
+          </p>
+          {activeNotice.message ? <p>{activeNotice.message}</p> : null}
+        </div>
+        {doctors.length > 0 ? (
+          <div className="p-4 sm:max-w-1/2">
+            <p>Die Vertretung übernehmen die Praxen von:</p>
+            {vertreter ? vertreter : <p>Keine Vertretung definiert</p>}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

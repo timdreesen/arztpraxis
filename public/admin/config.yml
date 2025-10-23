@@ -29,29 +29,66 @@ media_folder: public/uploads
 public_folder: /uploads
 
 collections:
-  - name: outofoffice
-    label: Out of Office Notices
-    folder: public/content/ooo
-    extension: json
-    format: json
+  - name: "outofoffice"
+    label: "Out of Office Notices"
+    folder: "public/content/ooo"
+    extension: "json"
+    format: "json"
     create: true
-    slug: notice-{{year}}-{{month}}-{{day}}
+    slug: "notice-{{year}}-{{month}}-{{day}}"
     fields:
-      - {
-          label: Start Date,
-          name: start_date,
-          widget: datetime,
-          date_format: YYYY-MM-DD,
-        }
-      - {
-          label: End Date,
-          name: end_date,
-          widget: datetime,
-          date_format: YYYY-MM-DD,
-        }
-      - label: Available Doctors
-        name: available_doctors
-        widget: list
-        field: { label: Doctor, name: doctor, widget: string }
-      - { label: Custom Message, name: message, widget: text }
-      - { label: Published, name: published, widget: boolean, default: true }
+      - label: "Von"
+        name: "start_date"
+        widget: "datetime"
+        date_format: "DD-MM-YYYY"
+        time_format: false
+
+      - label: "Bis"
+        name: "end_date"
+        widget: "datetime"
+        date_format: "DD-MM-YYYY"
+        time_format: false
+
+      - label: "Vertretung"
+        name: "available_doctors"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Telefon", name: "phone", widget: "string" }
+          - { label: "Adresse", name: "address", widget: "string" }
+        default:
+          - {
+              name: "Dr. Teske-Hargus",
+              phone: "04503/31936",
+              address: "Poststr. 34 Tdf. Strand",
+            }
+          - {
+              name: "Dr. Kallien",
+              phone: "04503/2559",
+              address: "Strandallee 94a, Tdf. Strand",
+            }
+          - {
+              name: "Dr. Schütz",
+              phone: "04503/4098",
+              address: "Bergstr. 2, Tdf. Strand",
+            }
+          - {
+              name: "Dr. Thaler",
+              phone: "04503/1260",
+              address: "Erlenbruchstr. 3, Tdf. Strand",
+            }
+          - {
+              name: "Dres. Eschweiler",
+              phone: "04503/889021",
+              address: "Strandstr. 129, Niendorf",
+            }
+
+      - label: "Nachricht (optional)"
+        name: "message"
+        widget: "text"
+        required: false
+
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: true

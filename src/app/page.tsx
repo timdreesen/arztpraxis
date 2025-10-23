@@ -7,11 +7,11 @@ import Aktuelles from "@/components/Aktuelles";
 
 export default function Home() {
   return (
-    <div className="mx-auto flex flex-col gap-y-16">
+    <div className="mx-auto w-full flex flex-col gap-y-16">
       <Aktuelles />
       <Notfaelle />
 
-      <div className="p-18 w-screen bg-neutral ">
+      <div className="py-18 w-full bg-neutral ">
         <div className="mx-auto flex flex-col max-w-7xl sm:grid grid-cols-2 gap-5">
           <Oeffnungszeiten />
           <Eingang />
