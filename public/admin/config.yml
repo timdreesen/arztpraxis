@@ -1,7 +1,7 @@
 backend:
   name: auth0
-  domain: "pbd.eu.auth0.com"
-  client_id: "JDs2q1JDBhGpfFgSZ1JPup2AFn481oKe"
+  domain: AUTH0_DOMAIN
+  client_id: AUTH0_CLIENT_ID
   branch: "main"
 
 media_folder: "public/uploads"
