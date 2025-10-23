@@ -6,11 +6,33 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "notices"
-    label: "Out-of-Office Notice"
-    folder: "content/notices"
+  - name: "outofoffice"
+    label: "Out of Office Notices"
+    folder: "content/outofoffice"
+    extension: "json"
+    format: "json"
     create: true
-    slug: "{{slug}}"
+    slug: "notice-{{year}}-{{month}}-{{day}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Message", name: "body", widget: "markdown" }
+      - label: "Start Date"
+        name: "start_date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+      - label: "End Date"
+        name: "end_date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+      - label: "Available Doctors"
+        name: "available_doctors"
+        widget: "list"
+        field:
+          label: "Doctor"
+          name: "doctor"
+          widget: "string"
+      - label: "Custom Message"
+        name: "message"
+        widget: "text"
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: true

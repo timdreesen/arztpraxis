@@ -3,8 +3,10 @@ import Link from "next/link";
 
 export default function Adresse() {
   return (
-    <div className="flex flex-col items-center">
-      <h3 className="text-center text-4xl pb-5">Kontaktdaten</h3>
+    <div className="flex flex-col items-center text-neutral-800">
+      <h3 className="text-3xl font-bold text-center pb-4 sm:text-start sm:pb-2">
+        Kontaktdaten
+      </h3>
       <address className="not-italic leading-relaxed text-center">
         <strong>Praxis Dr. med. Jens Dreesen</strong>
         <p>Strandallee 97</p>

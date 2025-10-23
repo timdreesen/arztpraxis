@@ -30,7 +30,6 @@ export const metadata: Metadata = {
       { rel: "manifest", url: "/site.webmanifest" },
     ],
   },
-  themeColor: "#09263f", // used by some browsers / PWA
 };
 
 export default function RootLayout({

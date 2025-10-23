@@ -28,33 +28,27 @@ export default function Navbar() {
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-blue-900 text-neutral-100">
-      <div className="max-w-[1300px] mx-auto flex items-center justify-between p-3 relative">
+    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-primary text-neutral-100">
+      <div className="max-w-7xl mx-auto flex items-center justify-between p-3 relative">
         {/* Title */}
-        <h1 className="text-lg font-semibold md:text-2xl">
+        <Link href="/" className="text-lg font-semibold md:text-2xl">
           Dr. med. Jens Dreesen
-        </h1>
+        </Link>
 
         {/* Center nav links on sm+ screens */}
         <ul className="hidden sm:flex absolute left-1/2 -translate-x-1/2 gap-6 font-medium">
           <li>
-            <Link href="#hinweis" className="hover:text-neutral-300 transition">
+            <Link href="#hinweis" className="hover:text-accent transition">
               Hinweis
             </Link>
           </li>
           <li>
-            <Link
-              href="#aktuelles"
-              className="hover:text-neutral-300 transition"
-            >
+            <Link href="#aktuelles" className="hover:text-accent transition">
               Aktuelles
             </Link>
           </li>
           <li>
-            <Link
-              href="#ueber-mich"
-              className="hover:text-neutral-300 transition"
-            >
+            <Link href="#ueber-mich" className="hover:text-accent transition">
               Über Mich
             </Link>
           </li>
