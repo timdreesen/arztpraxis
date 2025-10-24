@@ -4,15 +4,9 @@ import Eingang from "@/components/Eingang";
 import UeberMich from "@/components/UeberMich";
 import Adresse from "@/components/Adresse";
 import Aktuelles from "@/components/Aktuelles";
-import { getActiveOOO, getSecondsUntilEnd } from "@/lib/getActiveOOO";
+import { getActiveOOO } from "@/lib/getActiveOOO";
 
-let revalidateSeconds = 60 * 60 * 12;
-try {
-  const notice = getActiveOOO();
-  if (notice) revalidateSeconds = getSecondsUntilEnd(notice);
-} catch {}
-
-export const revalidate = revalidateSeconds;
+export const revalidate = 60 * 60 * 12;
 
 export default function Home() {
   const notice = getActiveOOO();

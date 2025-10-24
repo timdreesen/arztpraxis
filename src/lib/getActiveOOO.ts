@@ -42,12 +42,3 @@ export function getActiveOOO(): OutOfOfficeNotice | null {
 
   return notice;
 }
-
-export function getSecondsUntilEnd(notice: OutOfOfficeNotice): number {
-  const end = DateTime.fromFormat(notice.end_date, "dd.MM.yy", {
-    zone: "Europe/Berlin",
-  }).set({ hour: 23, minute: 0, second: 0 });
-  const now = DateTime.now().setZone("Europe/Berlin");
-  const diff = end.diff(now, "seconds").seconds;
-  return Math.max(60, Math.round(diff)); // never less than 1 minute
-}
