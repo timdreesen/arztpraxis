@@ -4,11 +4,21 @@ import Eingang from "@/components/Eingang";
 import UeberMich from "@/components/UeberMich";
 import Adresse from "@/components/Adresse";
 import Aktuelles from "@/components/Aktuelles";
+import { getActiveOOO, getSecondsUntilEnd } from "@/lib/getActiveOOO";
+
+let revalidateSeconds = 60 * 60 * 12;
+try {
+  const notice = getActiveOOO();
+  if (notice) revalidateSeconds = getSecondsUntilEnd(notice);
+} catch {}
+
+export const revalidate = revalidateSeconds;
 
 export default function Home() {
+  const notice = getActiveOOO();
   return (
-    <div className="mx-auto w-full flex flex-col gap-y-16">
-      <Aktuelles />
+    <div className="mx-auto w-full flex flex-col gap-y-16 py-16">
+      {notice ? <Aktuelles notice={notice} /> : null}
       <Notfaelle />
 
       <div className="py-18 w-full bg-neutral ">

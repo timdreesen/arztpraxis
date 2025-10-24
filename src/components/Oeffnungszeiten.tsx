@@ -1,6 +1,9 @@
 export default function Oeffnungszeiten() {
   return (
-    <section className="p-5 bg-gray-5 text-neutral-800">
+    <section
+      id="sprechzeiten"
+      className="p-5 scroll-mt-24 bg-gray-5 text-neutral-800"
+    >
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-5">Sprechzeiten</h2>
         <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-left text-lg">

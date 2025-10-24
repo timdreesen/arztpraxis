@@ -1,9 +1,14 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 
-export default function Navbar() {
+type NavbarProps = {
+  hasOOO: boolean;
+};
+
+export default function Navbar({ hasOOO }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -28,23 +33,30 @@ export default function Navbar() {
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-primary text-neutral-100">
+    <nav className="sticky top-0 z-50 w-full shadow-md bg-primary text-neutral-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-3 relative">
         {/* Title */}
         <Link href="/" className="text-lg font-semibold md:text-2xl">
           Dr. med. Jens Dreesen
         </Link>
 
-        {/* Center nav links on sm+ screens */}
+        {/* Center nav links */}
         <ul className="hidden sm:flex absolute left-1/2 -translate-x-1/2 gap-6 font-medium">
+          {hasOOO && (
+            <li>
+              <Link href="#aktuelles" className="hover:text-accent transition">
+                Aktuelles
+              </Link>
+            </li>
+          )}
           <li>
-            <Link href="#hinweis" className="hover:text-accent transition">
-              Hinweis
+            <Link href="#notfaelle" className="hover:text-accent transition">
+              Notfälle
             </Link>
           </li>
           <li>
-            <Link href="#aktuelles" className="hover:text-accent transition">
-              Aktuelles
+            <Link href="#sprechzeiten" className="hover:text-accent transition">
+              Sprechzeiten
             </Link>
           </li>
           <li>
@@ -52,14 +64,19 @@ export default function Navbar() {
               Über Mich
             </Link>
           </li>
+          <li>
+            <Link href="#kontakt" className="hover:text-accent transition">
+              Kontaktdaten
+            </Link>
+          </li>
         </ul>
 
-        {/* Phone number (hidden on mobile, right-aligned on sm+) */}
+        {/* Phone number (hidden on mobile) */}
         <p className="hidden sm:block text-sm md:text-base whitespace-nowrap">
           Tel. 04503 4444
         </p>
 
-        {/* Hamburger icon (mobile only) */}
+        {/* Hamburger (mobile) */}
         <button
           ref={buttonRef}
           onClick={toggleMenu}
@@ -84,31 +101,51 @@ export default function Navbar() {
           }`}
         >
           <ul className="flex flex-col font-medium">
+            {hasOOO && (
+              <li>
+                <Link
+                  href="#aktuelles"
+                  onClick={handleLinkClick}
+                  className="block w-full hover:bg-blue-900 p-3 border-b border-neutral-700"
+                >
+                  Aktuelles
+                </Link>
+              </li>
+            )}
             <li>
               <Link
-                href="#hinweis"
+                href="#notfaelle"
                 onClick={handleLinkClick}
                 className="block w-full hover:bg-blue-900 p-3 border-b border-neutral-700"
               >
-                Hinweis
+                Notfälle
               </Link>
             </li>
             <li>
               <Link
-                href="#aktuelles"
+                href="#sprechzeiten"
                 onClick={handleLinkClick}
                 className="block w-full hover:bg-blue-900 p-3 border-b border-neutral-700"
               >
-                Aktuelles
+                Sprechzeiten
               </Link>
             </li>
             <li>
               <Link
                 href="#ueber-mich"
                 onClick={handleLinkClick}
-                className="block w-full hover:bg-blue-900 p-3"
+                className="block w-full hover:bg-blue-900 p-3 border-b border-neutral-700"
               >
                 Über Mich
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#kontakt"
+                onClick={handleLinkClick}
+                className="block w-full hover:bg-blue-900 p-3"
+              >
+                Kontaktdaten
               </Link>
             </li>
           </ul>

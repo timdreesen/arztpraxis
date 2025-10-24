@@ -3,12 +3,15 @@ import profilePic from "@/app/jens.jpg";
 
 export default function UeberMich() {
   return (
-    <section className="mx-auto flex flex-col sm:flex-row gap-8 rounded-tr-2xl rounded-bl-2xl">
+    <section
+      id="ueber-mich"
+      className="scroll-mt-24 mx-auto flex flex-col sm:flex-row gap-8 rounded-tr-2xl rounded-bl-2xl"
+    >
       <div>
         <Image
           src={profilePic}
           alt="Dr. med. Jens Dreesen"
-          className="w-64 rounded-md shadow-2xl opacity-95 hover:opacity-100"
+          className="w-64 rounded-md shadow-2xl opacity-95 mx-auto hover:opacity-100"
         />
         <p className="text-center pt-3 font-medium text-lg">
           Dr. med. Jens Dreesen

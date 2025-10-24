@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Song Myung
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/songmyung/v21/1cX2aUDWAJH5-EIC7DIhr1GqhcitzeM.ttf
-- Font License: undefined)

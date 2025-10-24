@@ -8,6 +8,15 @@ backend:
   auth_token_endpoint: /sites/940cdcb2-d106-4fbd-b0e6-552f662fe744/token
   gateway_url: https://gateway.decapbridge.com
 
+local_backend: true # Set to true to allow connecting to your local site
+
+# 💡 Configure the 'dev_server' to point to your local development server's address
+publish_mode: editorial_workflow
+dev_server:
+  protocol: http
+  host: localhost
+  port: 3000 # Use the port your local dev server runs on (e.g., 8000 for Gatsby, 3000 for Next.js)
+
 commit_messages:
   create: 'Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge'
   update: 'Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge'
@@ -30,32 +39,50 @@ public_folder: /uploads
 
 collections:
   - name: "outofoffice"
-    label: "Out of Office Notices"
+    label: "Urlaub/Aktuelles"
     folder: "public/content/ooo"
     extension: "json"
     format: "json"
     create: true
+    summary: "Urlaub: {{start_date}} - {{end_date}}"
     slug: "notice-{{year}}-{{month}}-{{day}}"
+
     fields:
       - label: "Von"
         name: "start_date"
         widget: "datetime"
-        date_format: "DD-MM-YYYY"
+        date_format: "DD.MM.YY"
         time_format: false
 
       - label: "Bis"
         name: "end_date"
         widget: "datetime"
-        date_format: "DD-MM-YYYY"
+        date_format: "DD.MM.YY"
         time_format: false
 
       - label: "Vertretung"
         name: "available_doctors"
         widget: "list"
         fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Telefon", name: "phone", widget: "string" }
-          - { label: "Adresse", name: "address", widget: "string" }
+          - { label: "Name", name: "name", widget: "string", required: true }
+          - {
+              label: "Telefon",
+              name: "phone",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Adresse",
+              name: "address",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Zusatz",
+              name: "bonus",
+              widget: "string",
+              required: false,
+            }
         default:
           - {
               name: "Dr. Teske-Hargus",
@@ -83,12 +110,12 @@ collections:
               address: "Strandstr. 129, Niendorf",
             }
 
-      - label: "Nachricht (optional)"
+      - label: "Nachricht"
         name: "message"
         widget: "text"
         required: false
 
-      - label: "Published"
+      - label: "Veröffentlicht"
         name: "published"
         widget: "boolean"
         default: true
