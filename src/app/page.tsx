@@ -4,9 +4,9 @@ import Eingang from "@/components/Eingang";
 import UeberMich from "@/components/UeberMich";
 import Adresse from "@/components/Adresse";
 import Aktuelles from "@/components/Aktuelles";
-import { getActiveOOO } from "@/lib/getActiveOOO";
+import getActiveOOO from "@/lib/getActiveOOO";
 
-export const revalidate = 60 * 60 * 12;
+export const revalidate = 43200;
 
 export default function Home() {
   const notice = getActiveOOO();

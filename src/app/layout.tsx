@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: "Dr. med. Jens Dreesen",
   description: "Hausarzt in Timmendorfer Strand",
   icons: {
-    icon: "/favicon-32x32.png", // default favicon
-    shortcut: "/favicon-16x16.png", // shortcut icon
-    apple: "/apple-touch-icon.png", // iOS / Apple devices
+    icon: "/favicon-32x32.png",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
     other: [
       {
         rel: "manifest",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       {
         rel: "mask-icon",
         url: "/safari-pinned-tab.svg",
-        color: "#09263f", // optional for Safari pinned tab
+        color: "#09263f",
       },
       { rel: "manifest", url: "/site.webmanifest" },
     ],

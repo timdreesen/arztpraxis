@@ -16,7 +16,7 @@ export type OutOfOfficeNotice = {
   available_doctors?: Doctor[];
 };
 
-export function getActiveOOO(): OutOfOfficeNotice | null {
+export default function getActiveOOO(): OutOfOfficeNotice | null {
   const dir = path.join(process.cwd(), "public/content/ooo");
   const files = fs.existsSync(dir)
     ? fs.readdirSync(dir).filter((f) => f.endsWith(".json"))
