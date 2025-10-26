@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "browserslist": [
+    "last 5 Chrome versions",
+    "last 5 Firefox versions",
+    "last 5 Safari versions",
+    "last 5 Edge versions"
+  ],
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
