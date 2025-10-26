@@ -35,13 +35,12 @@ export default function Navbar({ hasOOO }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-50 w-full shadow-md bg-primary text-neutral-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-3 relative">
-        {/* Title */}
-        <Link href="/" className="text-lg font-semibold md:text-2xl">
-          Dr. med. Jens Dreesen
+        <Link href="/" className="text-lg font-semibold md:text-2xl sm:text-lg">
+          Dr. med. <br className="lg:hidden" />
+          Jens Dreesen
         </Link>
 
-        {/* Center nav links */}
-        <ul className="hidden sm:flex absolute left-1/2 -translate-x-1/2 gap-6 font-medium">
+        <ul className="hidden sm:flex absolute left-1/2 -translate-x-1/2 gap-3 sm:gap-6 font-medium">
           {hasOOO && (
             <li>
               <Link href="#aktuelles" className="hover:text-accent transition">
@@ -60,7 +59,10 @@ export default function Navbar({ hasOOO }: NavbarProps) {
             </Link>
           </li>
           <li>
-            <Link href="#ueber-mich" className="hover:text-accent transition">
+            <Link
+              href="#ueber-mich"
+              className="hover:text-accent transition whitespace-nowrap"
+            >
               Über Mich
             </Link>
           </li>

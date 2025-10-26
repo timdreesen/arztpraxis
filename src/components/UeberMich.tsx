@@ -5,9 +5,9 @@ export default function UeberMich() {
   return (
     <section
       id="ueber-mich"
-      className="scroll-mt-24 mx-auto flex flex-col sm:flex-row gap-8 rounded-tr-2xl rounded-bl-2xl"
+      className="scroll-mt-24 mx-auto flex flex-col sm:flex-row flex-wrap gap-8 rounded-tr-2xl rounded-bl-2xl"
     >
-      <div>
+      <div className="mx-auto">
         <Image
           src={profilePic}
           alt="Dr. med. Jens Dreesen"
@@ -18,11 +18,9 @@ export default function UeberMich() {
         </p>
       </div>
 
-      <div className="text-neutral-800 max-w-96 flex flex-col">
-        <div>
-          <h3 className="text-3xl font-bold text-center pb-4 sm:text-start sm:pb-2">
-            Moin!
-          </h3>
+      <div className="text-neutral-800 max-w-96 flex flex-col px-5 mx-auto text-center sm:text-start">
+        <div className="flex flex-col items-center sm:items-start">
+          <h3 className="text-3xl font-bold  pb-4  sm:pb-2">Moin!</h3>
           <p className="tracking-wider">
             Ich bin in Timmendorfer Strand aufgewachsen und verbringe meine
             Freizeit gerne mit Segeln, Schwimmen oder entspannten Stunden am
@@ -34,7 +32,7 @@ export default function UeberMich() {
             tätig.
           </p>
         </div>
-        <ul className="list-disc list-inside tracking-wider font-medium text-md pt-5">
+        <ul className="list-disc list-inside tracking-wider font-medium text-md text-start pt-5">
           <li>Hausarzt (Allgemeinmedizin)</li>
           <li>Balneologie und Medizinische Klimatologie</li>
           <li>Naturheilverfahren</li>
