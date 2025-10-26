@@ -39,6 +39,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" suppressHydrationWarning>
+      <head>
+        {/* Preload global CSS */}
+        <link rel="preload" href="/globals.css" as="style" />
+        <link rel="stylesheet" href="/globals.css" />
+      </head>
       <body className={`${roboto.className} min-h-screen flex flex-col`}>
         <NavbarWrapper />
         {children}
