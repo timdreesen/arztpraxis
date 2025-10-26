@@ -12,6 +12,13 @@ export default function Navbar({ hasOOO }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const [maxHeight, setMaxHeight] = useState("0px");
+
+  useEffect(() => {
+    if (menuRef.current) {
+      setMaxHeight(open ? `${menuRef.current.scrollHeight}px` : "0px");
+    }
+  }, [open]);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -98,9 +105,10 @@ export default function Navbar({ hasOOO }: NavbarProps) {
           ref={menuRef}
           className={`absolute top-14 right-3 w-40 bg-blue-950 rounded-lg shadow-md sm:hidden transition-all duration-300 ease-in-out overflow-hidden ${
             open
-              ? "max-h-50 opacity-100 translate-y-0 pointer-events-auto"
-              : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 -translate-y-2 pointer-events-none"
           }`}
+          style={{ maxHeight }}
         >
           <ul className="flex flex-col font-medium">
             {hasOOO && (
