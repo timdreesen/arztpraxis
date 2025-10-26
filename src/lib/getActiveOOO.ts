@@ -17,7 +17,7 @@ export type OutOfOfficeNotice = {
 };
 
 export default function getActiveOOO(): OutOfOfficeNotice | null {
-  const dir = path.join(process.cwd(), "public/content/ooo");
+  const dir = path.join(process.cwd(), "content/ooo");
   const files = fs.existsSync(dir)
     ? fs.readdirSync(dir).filter((f) => f.endsWith(".json"))
     : [];

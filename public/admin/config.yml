@@ -2,16 +2,12 @@ backend:
   name: git-gateway
   repo: timdreesen/arztpraxis
   branch: main
-  auth_type: pkce
-  base_url: https://auth.decapbridge.com
-  auth_endpoint: /sites/940cdcb2-d106-4fbd-b0e6-552f662fe744/pkce
-  auth_token_endpoint: /sites/940cdcb2-d106-4fbd-b0e6-552f662fe744/token
+  identity_url: https://auth.decapbridge.com/sites/940cdcb2-d106-4fbd-b0e6-552f662fe744
   gateway_url: https://gateway.decapbridge.com
 
 local_backend: true # Set to true to allow connecting to your local site
 
 # 💡 Configure the 'dev_server' to point to your local development server's address
-publish_mode: editorial_workflow
 dev_server:
   protocol: http
   host: localhost
@@ -32,7 +28,7 @@ auth:
   avatar_url_claim: avatar_url
 
 site_url: https://snazzy-phoenix-ae7b50.netlify.app
-logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+logo_url: https://snazzy-phoenix-ae7b50.netlify.app/favicon-32x32.png
 
 media_folder: public/uploads
 public_folder: /uploads
@@ -40,7 +36,7 @@ public_folder: /uploads
 collections:
   - name: "outofoffice"
     label: "Urlaub/Aktuelles"
-    folder: "public/content/ooo"
+    folder: "content/ooo"
     extension: "json"
     format: "json"
     create: true
@@ -87,7 +83,7 @@ collections:
           - {
               name: "Dr. Teske-Hargus",
               phone: "04503/31936",
-              address: "Poststr. 34 Tdf. Strand",
+              address: "Poststr. 34, Tdf. Strand",
             }
           - {
               name: "Dr. Kallien",
