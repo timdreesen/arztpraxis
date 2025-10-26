@@ -51,8 +51,10 @@ export default function Page() {
       <section className="space-y-2">
         <h2 className="text-xl font-semibold">3. Cookies</h2>
         <p>
-          Diese Website verwendet keine Cookies. Es findet keine Speicherung von
-          personenbezogenen Daten in Cookies statt.
+          Diese Website verwendet keine Cookies für Tracking oder Marketing.
+          Lediglich für den Login des Website-Administrators wird ein Cookie
+          gesetzt, um eine sichere Anmeldung im geschützten Adminbereich zu
+          ermöglichen. Normale Besucher der Website sind davon nicht betroffen.
         </p>
       </section>
 
