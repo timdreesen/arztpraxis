@@ -35,12 +35,12 @@ export default function Navbar({ hasOOO }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-50 w-full shadow-md bg-primary text-neutral-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-3 relative">
-        <Link href="/" className="text-lg font-semibold md:text-2xl sm:text-lg">
+        <Link href="/" className="text-sm font-semibold md:text-2xl sm:text-sm">
           Dr. med. <br className="lg:hidden" />
           Jens Dreesen
         </Link>
 
-        <ul className="hidden sm:flex absolute left-1/2 -translate-x-1/2 gap-3 sm:gap-6 font-medium">
+        <ul className="hidden text-sm sm:flex absolute left-1/2 -translate-x-1/2 gap-3 sm:gap-6  sm:font-medium lg:text-lg md:text-base">
           {hasOOO && (
             <li>
               <Link href="#aktuelles" className="hover:text-accent transition">
@@ -68,7 +68,7 @@ export default function Navbar({ hasOOO }: NavbarProps) {
           </li>
           <li>
             <Link href="#kontakt" className="hover:text-accent transition">
-              Kontaktdaten
+              Kontakt
             </Link>
           </li>
         </ul>
@@ -147,7 +147,7 @@ export default function Navbar({ hasOOO }: NavbarProps) {
                 onClick={handleLinkClick}
                 className="block w-full hover:bg-blue-900 p-3"
               >
-                Kontaktdaten
+                Kontakt
               </Link>
             </li>
           </ul>
