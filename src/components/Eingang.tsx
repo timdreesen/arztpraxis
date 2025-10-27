@@ -1,14 +1,16 @@
 import Image from "next/image";
-import praxisEingang from "@/app/praxis-eingang.jpg";
+import praxisEingang from "@/app/praxis-eingang.webp";
 
 export default function Eingang() {
   return (
-    <div className="relative mx-auto aspect-4/3 w-full max-w-xl overflow-hidden rounded-lg shadow-2xl">
+    <div className="w-full">
       <Image
         src={praxisEingang}
         alt="der Eingang zur Praxis"
-        fill
-        sizes="(max-width: 640px) 372px, 50vw"
+        width={640}
+        height={480}
+        className="mx-auto w-full max-w-md rounded-lg shadow-2xl"
+        sizes="(max-width: 640px) 100vw, 448px"
         style={{ objectFit: "cover" }}
       />
     </div>

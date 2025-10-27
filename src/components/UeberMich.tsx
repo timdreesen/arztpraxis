@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilePic from "@/app/jens.jpg";
+import profilePic from "@/app/jens.webp";
 
 export default function UeberMich() {
   return (
@@ -11,12 +11,11 @@ export default function UeberMich() {
         <Image
           src={profilePic}
           alt="Dr. med. Jens Dreesen"
-          width={256} // display width for mobile
-          height={390} // display height for mobile
-          style={{ width: "100%", height: "auto" }}
+          width={630}
+          height={959}
+          className="mx-auto w-full max-w-3xs rounded-md opacity-95 shadow-2xl hover:opacity-100"
           sizes="(max-width: 640px) 100vw, 256px"
-          className="mx-auto w-64 rounded-md opacity-95 shadow-2xl hover:opacity-100"
-          quality={75} // default 75, can reduce to 60 to save more KB
+          quality={80}
         />
         <p className="pt-3 text-center text-lg font-medium">
           Dr. med. Jens Dreesen
