@@ -14,7 +14,7 @@ export default function UeberMich() {
           width={630}
           height={959}
           className="mx-auto w-full max-w-3xs rounded-md opacity-95 shadow-2xl hover:opacity-100"
-          sizes="(max-width: 640px) 100vw, 256px"
+          sizes="256px"
           quality={80}
         />
         <p className="pt-3 text-center text-lg font-medium">

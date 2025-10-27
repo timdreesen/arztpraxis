@@ -10,7 +10,7 @@ export default function Eingang() {
         width={640}
         height={480}
         className="mx-auto w-full max-w-md rounded-lg shadow-2xl"
-        sizes="(max-width: 640px) 100vw, 448px"
+        sizes="448px"
         style={{ objectFit: "cover" }}
       />
     </div>
