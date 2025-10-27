@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" suppressHydrationWarning>
-      <body className={`${roboto.className} min-h-screen flex flex-col`}>
+      <body className={`${roboto.className} flex min-h-screen flex-col`}>
         <NavbarWrapper />
         <main>{children}</main>
 

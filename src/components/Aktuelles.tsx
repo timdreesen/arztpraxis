@@ -4,30 +4,30 @@ import { OutOfOfficeNotice } from "@/lib/getActiveOOO";
 export default function Aktuelles({ notice }: { notice: OutOfOfficeNotice }) {
   return (
     <div id="aktuelles" className="scroll-mt-24">
-      <h2 className="text-5xl mb-4 font-bold tracking-wide text-center text-shadow-lg">
+      <h2 className="mb-4 text-center text-5xl font-bold tracking-wide text-shadow-lg">
         Aktuelles
       </h2>
-      <div className="text-neutral-800 max-w-5xl pb-8 mx-auto grid grid-cols-1 sm:grid-cols-1 px-6 border-l-4 border-secondary bg-neutral-100">
-        <div className="pt-5 px-3">
-          <p className="text-lg text-center">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 border-l-4 border-secondary bg-neutral-100 px-6 pb-8 text-neutral-800 sm:grid-cols-1">
+        <div className="px-3 pt-5">
+          <p className="text-center text-lg">
             Die Praxis ist vom{" "}
-            <span className="font-semibold text-xl">{notice.start_date}</span>{" "}
+            <span className="text-xl font-semibold">{notice.start_date}</span>{" "}
             bis zum{" "}
-            <span className="font-semibold text-xl">{notice.end_date}</span>{" "}
+            <span className="text-xl font-semibold">{notice.end_date}</span>{" "}
             geschlossen.
           </p>
           {notice.message && (
             <p className="text-center text-lg">{notice.message}</p>
           )}
-          <p className="text-lg text-center">
+          <p className="text-center text-lg">
             Die Vertretung übernehmen freundlicherweise die Praxen von:
           </p>
         </div>
 
-        <div className="grid gap-4 px-4 py-2 lg:grid-cols-3 md:grid-cols-2">
+        <div className="grid gap-4 px-4 py-2 md:grid-cols-2 lg:grid-cols-3">
           {notice.available_doctors?.map((doc) => (
             <div
-              className="bg-white shadow-md text-center p-3 hover:shadow-lg"
+              className="bg-white p-3 text-center shadow-md hover:shadow-lg"
               key={doc.name}
             >
               <p>{doc.name}</p>
@@ -38,7 +38,7 @@ export default function Aktuelles({ notice }: { notice: OutOfOfficeNotice }) {
           ))}
         </div>
 
-        <p className="text-center pt-4">
+        <p className="pt-4 text-center">
           Wenn möglich, melden Sie sich bitte vorher telefonisch, da die
           Sprechzeiten abweichen können. Vielen Dank!
         </p>

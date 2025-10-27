@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <>
-      <section className="max-w-3xl mx-auto p-6 space-y-6 text-gray-800">
+      <section className="mx-auto max-w-3xl space-y-6 p-6 text-gray-800">
         <h1 className="text-3xl font-bold">Impressum</h1>
 
         <section className="space-y-2">

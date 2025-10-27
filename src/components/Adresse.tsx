@@ -5,12 +5,12 @@ export default function Adresse() {
   return (
     <div
       id="kontakt"
-      className="scroll-mt-24 flex flex-col items-center text-neutral-800"
+      className="flex scroll-mt-24 flex-col items-center text-neutral-800"
     >
-      <h3 className="text-3xl font-bold text-center pb-4 sm:text-start sm:pb-2">
+      <h3 className="pb-4 text-center text-3xl font-bold sm:pb-2 sm:text-start">
         Kontaktdaten
       </h3>
-      <address className="not-italic leading-relaxed text-center">
+      <address className="text-center leading-relaxed not-italic">
         <strong>Praxis Dr. med. Jens Dreesen</strong>
         <p>Strandallee 97</p>
         <p>23669 Timmendorfer Strand</p>
@@ -22,7 +22,7 @@ export default function Adresse() {
       <Link
         href="/dr-jens-dreesen.vcf"
         download="dr-jens-dreesen.vcf"
-        className="inline-flex items-center gap-2 px-4 py-2 my-4 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-800 transition sm:hidden"
+        className="my-4 inline-flex items-center gap-2 rounded-lg bg-blue-900 px-4 py-2 text-white shadow transition hover:bg-blue-800 sm:hidden"
       >
         <FaRegAddressBook className="text-lg" />
         Kontakt speichern
