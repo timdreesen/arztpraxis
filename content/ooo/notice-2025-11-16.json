@@ -1,0 +1,27 @@
+{
+  "available_doctors": [
+    {
+      "name": "Dr. Thaler",
+      "phone": "04503/1260",
+      "address": "Erlenbruchstr. 3, Tdf. Strand"
+    },
+    {
+      "name": "Dr. Kallien",
+      "phone": "04503/2559",
+      "address": "Strandallee 94a, Tdf. Strand"
+    },
+    {
+      "name": "Dr. Teske-Hargus",
+      "phone": "04503/31936",
+      "address": "Poststr. 34, Tdf. Strand"
+    },
+    {
+      "name": "Dres. Eschweiler",
+      "phone": "04503/889021",
+      "address": "Strandstr. 129, Niendorf"
+    }
+  ],
+  "published": true,
+  "start_date": "17.11.25",
+  "end_date": "07.12.25"
+}
