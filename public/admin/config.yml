@@ -27,8 +27,8 @@ auth:
   last_name_claim: last_name
   avatar_url_claim: avatar_url
 
-site_url: https://snazzy-phoenix-ae7b50.netlify.app
-logo_url: https://snazzy-phoenix-ae7b50.netlify.app/favicon-32x32.png
+site_url: https://dreesen.info.netlify.app
+logo_url: https://dreesen.info/favicon-32x32.png
 
 media_folder: public/uploads
 public_folder: /uploads

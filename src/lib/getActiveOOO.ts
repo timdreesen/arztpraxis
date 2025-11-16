@@ -38,7 +38,7 @@ export default function getActiveOOO(): OutOfOfficeNotice | null {
   });
   const now = DateTime.now().setZone("Europe/Berlin");
 
-  if (now < start || now > end.endOf("day")) return null;
+  if (now > end.endOf("day")) return null;
 
   return notice;
 }
