@@ -15,7 +15,6 @@ export default function UeberMich() {
           height={959}
           className="mx-auto w-full max-w-3xs rounded-md opacity-95 shadow-2xl hover:opacity-100"
           sizes="256px"
-          quality={80}
         />
         <p className="pt-3 text-center text-lg font-medium">
           Dr. med. Jens Dreesen
@@ -28,8 +27,7 @@ export default function UeberMich() {
           <p className="tracking-wider">
             Ich bin in Timmendorfer Strand aufgewachsen und verbringe meine
             Freizeit gerne mit Segeln, Schwimmen oder entspannten Stunden am
-            Strand. Außerdem bin ich leidenschaftlicher Vogelbeobachter und höre
-            gern Musik.
+            Strand. Außerdem bin ich Hobbyfotograf.
           </p>
           <p className="py-3 tracking-wider">
             Seit über 25 Jahren bin ich als Hausarzt in Timmendorfer Strand
