@@ -1,19 +1,9 @@
 {
   "available_doctors": [
     {
-      "name": "Dr. Teske-Hargus",
-      "phone": "04503/31936",
-      "address": "Poststr. 34, Tdf. Strand"
-    },
-    {
       "name": "Dr. Thaler",
       "phone": "04503/1260",
       "address": "Erlenbruchstr. 3, Tdf. Strand"
-    },
-    {
-      "name": "Dres. Eschweiler",
-      "phone": "04503/889021",
-      "address": "Strandstr. 129, Niendorf"
     }
   ],
   "published": true,
